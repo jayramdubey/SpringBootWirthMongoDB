@@ -1,0 +1,24 @@
+
+#Application Configuration
+spring:
+  application:
+    name: person-service
+
+#Server Configuration
+server:
+  port: 8000
+
+#Mongo Configuration
+mongo:
+  database : person-db
+  url : mongodb+srv://jay_db:Sn0pyNxjXj96Gcj1@cluster0-ui1il.mongodb.net/test?retryWrites=true&w=majority
+
+#Tenant Validation Configuration
+tenants:
+  - id: 100A5C50050020EABB400400AC160000
+    name: DEFAULT-TENANT
+    default-tenant : true
+    validators:
+      person-create:
+        - test
+
